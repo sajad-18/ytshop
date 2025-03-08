@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="detail">
+        <div class="container">
+            <div class="heading">
+                <div class="slideshow">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / {% if ad.image_optional %} 5 {% else %} 4 {% endif %} </div>
+                        <img src="{{ ad.image_lobby.url }}" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">2 / {% if ad.image_optional %} 5 {% else %} 4 {% endif %} </div>
+                        <img src="{{ ad.image_danes.url }}" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">3 / {% if ad.image_optional %} 5 {% else %} 4 {% endif %} </div>
+                        <img src="{{ ad.image_guns.url }}" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">4 / {% if ad.image_optional %} 5 {% else %} 4 {% endif %} </div>
+                        <img src="{{ ad.image_character.url }}" style="width:100%">
+                    </div>
+                    {% if ad.image_optional %}
+                        <div class="mySlides">
+                          <div class="numbertext">5 / 5</div>
+                          <img src="{{ ad.image_optional.url }}" style="width:100%">
+                        </div>
+                    {% endif %}
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                    <div class="row">
+                      <div class="column">
+                        <img class="demo cursor" src="{{ ad.image_lobby.url }}" style="width:100%" onclick="currentSlide(1)" >
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="{{ ad.image_danes.url }}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="{{ ad.image_guns.url }}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="{{ ad.image_character.url }}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                      </div>
+                      {% if ad.image_optional %}
+                      <div class="column">
+                        <img class="demo cursor" src="{{ ad.image_optional.url }}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                      </div>
+                      {% endif %}
+                    </div>
+                    <h4 style="text-align: right;">خرید بازی کال آف دیوتی موبایل کد {{ ad.id }}</h4>
+                    <p>{{ ad.price }}<b style="color: rgba(0, 0, 0, 0.492);">تومان</b></p>
+                    <form action="{% url 'orders:cart_add' ad.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" class="addcart" value="افزودن به سبد خرید">
+                    </form>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 250 90.011">
+                        <g id="detail" transform="translate(-935 -800)">
+                          <g id="product_number" data-name="product number" transform="translate(0 2)">
+                            <text id=":شناسه_محصول" data-name=":شناسه محصول" transform="translate(1185 815)" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-105.383" y="0">:</tspan><tspan y="0">شناسه محصول</tspan></text>
+                            <text id="_213312" data-name="213312" transform="translate(1076 815)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-51.75" y="0">
+                                {{ ad.id }}</tspan></text>
+                          </g>
+                          <g id="category" transform="translate(0 7)">
+                            <text id=":دسته_بندی" data-name=":دسته بندی" transform="translate(1185 844)" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-73.313" y="0">:</tspan><tspan y="0">دسته بندی</tspan></text>
+                            <text id="اکانت_کالاف_دیوتی_موبایل" data-name="اکانت کالاف دیوتی موبایل" transform="translate(1105 844)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-169.461" y="0">اکانت کالاف دیوتی موبایل</tspan></text>
+                          </g>
+                          <g id="share" transform="translate(0 41)">
+                            <text id=":اشتراک_گذاری" data-name=":اشتراک گذاری" transform="translate(1185 844)" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-92.016" y="0">:</tspan><tspan y="0">اشتراک گذاری</tspan></text>
+                            <path id="Message" d="M16.729,3a4.985,4.985,0,0,1,4.99,4.979v7.789a4.986,4.986,0,0,1-4.99,4.979H6.989A4.985,4.985,0,0,1,2,15.767V7.979A4.979,4.979,0,0,1,6.989,3ZM18.3,9.448l.079-.079a.763.763,0,0,0-.011-.986.829.829,0,0,0-.522-.256.749.749,0,0,0-.553.2l-4.445,3.549a1.544,1.544,0,0,1-1.972,0L6.437,8.324A.754.754,0,0,0,5.381,9.379l.129.128L10,13.007a3.1,3.1,0,0,0,3.854,0Z" transform="translate(1064.141 828.127)" fill="#b1b1b1" fill-rule="evenodd"/>
+                            <path id="telegram" d="M9.011,18.022A9.011,9.011,0,1,0,0,9.011,9.01,9.01,0,0,0,9.011,18.022ZM4.123,8.816l8.688-3.35c.4-.146.755.1.625.708h0l-1.479,6.969c-.11.494-.4.614-.814.381l-2.253-1.66L7.8,12.911a.568.568,0,0,1-.454.222l.16-2.293,4.175-3.772c.182-.16-.041-.25-.28-.091l-5.16,3.248L4.021,9.531c-.483-.153-.493-.483.1-.716Z" transform="translate(1032.103 830.989)" fill="#b1b1b1"/>
+                            <g id="_007-whatsapp" data-name="007-whatsapp" transform="translate(998.1 830.963)">
+                              <g id="Group_15" data-name="Group 15" transform="translate(0 0)">
+                                <path id="Path_41" data-name="Path 41" d="M9.016,0h0a9.008,9.008,0,0,0-7.3,14.3L.593,17.645l3.465-1.108A9.012,9.012,0,1,0,9.016,0ZM14.26,12.728A2.543,2.543,0,0,1,12.492,14c-.471.1-1.086.18-3.157-.678A11.291,11.291,0,0,1,4.847,9.358,5.148,5.148,0,0,1,3.777,6.64,2.878,2.878,0,0,1,4.7,4.446a1.31,1.31,0,0,1,.922-.323c.112,0,.212.006.3.01.265.011.4.027.572.445.217.524.747,1.817.81,1.95a.537.537,0,0,1,.038.488,1.558,1.558,0,0,1-.292.413c-.133.153-.259.27-.392.435-.122.143-.259.3-.106.561a8,8,0,0,0,1.462,1.817,6.627,6.627,0,0,0,2.114,1.3.57.57,0,0,0,.635-.1,10.906,10.906,0,0,0,.7-.933.5.5,0,0,1,.647-.2c.243.085,1.531.721,1.8.853s.439.2.5.308A2.245,2.245,0,0,1,14.26,12.728Z" fill="#b1b1b1"/>
+                              </g>
+                            </g>
+                            <g id="_045-facebook" data-name="045-facebook" transform="translate(1029.1 830.989)">
+                              <g id="Group_16" data-name="Group 16" transform="translate(-65 0)">
+                                <path id="Path_42" data-name="Path 42" d="M15.751,0H2.25A2.252,2.252,0,0,0,0,2.25v13.5A2.252,2.252,0,0,0,2.25,18H9V11.813H6.751V9H9V6.75a3.375,3.375,0,0,1,3.375-3.375h2.25V6.188H13.5c-.621,0-1.125-.059-1.125.563V9h2.813l-1.125,2.813H12.376V18h3.375A2.252,2.252,0,0,0,18,15.751V2.25A2.252,2.252,0,0,0,15.751,0Z" fill="#b1b1b1"/>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                    </svg>
+
+                </div>
+                <div class="_detail">
+                    <div class="p-detail"><h4>توضیحات</h4></div>
+                    <div class="p-detail gray"><p>شماره آگهی</p><div><p>{{ ad.id }}</p></div></div>
+                    <div class="p-detail"><p>لول</p><div><p>{{ ad.level }}</p></div></div>
+                    <div class="p-detail gray"><p>رنک مولتی پلیر</p><div><p>12</p></div></div>
+                    <div class="p-detail"><p>تعداد سی پی</p><div><p>{{ ad.cp_count }}</p></div></div>
+                    <div class="p-detail gray"><p>شبکه های سینک شده</p><div>{{ ad.get_sync_display }}</div></div>
+                    <div class="p-detail"><p>ریجن</p><div><p>{{ ad.get_region_display }}</p></div></div>
+                    <div class="p-detail gray"><p>بتل پس</p><div><p>{{ ad.battle_pass }}</p></div></div>
+                    <div class="p-detail"><p>توضیحات</p><div><p>{{ ad.description}}</p></div></div>
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="tab">
+                  <button class="tablinks" onclick="openCity(event, 'Info')" id="defaultOpen">راهنمای خرید</button>
+                  <button class="tablinks" onclick="openCity(event, 'Role')">قوانین فروشگاه</button>
+                  <button class="tablinks" onclick="openCity(event, 'Call')">تماس با ما</button>
+                    <div class="line"></div>
+                </div>
+
+                <div id="Info" class="tabcontent">
+                  <h3>راهنمای خرید</h3>
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگر ها و متون بلکه روزنامه و  مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی های مورد نیاز، و کاربردهای متنوع وبا هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد ، تا با نرم افزارهای شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو را  در زبان  فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان  مورد نیاز شامل  حروفچینی دستاورد های اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد</p>
+                </div>
+
+                <div id="Role" class="tabcontent">
+                  <h3>قوانین فروشگاه</h3>
+                  <ul>
+                      <li>شایان ذکر است شما در زمان خرید اکانت، تنها حق واسط وبسایت را پرداخت مینمایید</li>
+                      <br>
+                      <li>نهایتا تا ۳ ساعت پس از خرید، ادمین های وبسایت از طریق تلگرام یا واتس آپ با شما تماس میگیرند و در خصوص مراحل بعدی شما را راهنمایی میکنند</li>
+                      <br>
+                      <li>پس از پرداخت حق واسط، با فروشنده ی اکانت تماس گرفته می شود تا در صورت موجود بودن اکانت، فرایند انتقال اکانت انجام شود
+    عمدتا هر معامله در کمتر از ۱۲ ساعت انجام میشود اما ممکن است بسته به شرایط خاص، انجام معاملات کمی با تاخیر انجام شود</li>
+                      <br>
+                      <li>مشتری مختار است فرایند انتقال اکانت را از طریق واسطه گری وبسایت انجام بدهد و یا اینکه مشخصات و راه های ارتباطی فروشنده را پس از پرداخت حق واسط از ادمین ها مطالبه کند و برای اخذ تخفیف یا انجام معامله به طرایق دیگر اقدام نماید</li>
+                      <br>
+                      <li>تنها در صورتی که فروشنده مجوز ارسال اطلاعات تماس را بدهد، ما آن اطلاعات را در اختیار خریدار قرار میدهیم</li>
+                      <br>
+                      <li>وبسایت هیچگونه مسئولیتی در قبال معاملات خارج از سایت را بر عهده نمیگیرد و از آنجا که راه های کلاهبرداری بسیار زیاد هستند، اکیدا پیشنهاد میکنیم تحت هیچ عنوان در خارج از سایت معاملات خود را انجام ندهید</li>
+                  </ul>
+                </div>
+
+                <div id="Call" class="tabcontent">
+                  <h3>تماس با ما</h3>
+                  <p><b>مدیر وبسایت:</b>09120000000 (انتقادات/پیشنهادات)</p>
+                  <p><b>ادمین معاملات:</b>09120000000 (تنها شماره معتبر در معماملات وای تی شاپ)</p>
+                  <p><b>ایمیل:</b>Example@info.com</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+{% endblock %}
+

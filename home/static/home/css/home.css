@@ -1,0 +1,772 @@
+.alert{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    direction: rtl;
+    border-radius: 7px;
+    padding: 0 50px;
+}
+
+.alert-success{
+    box-shadow: 0 0 10px #4B9816af;
+    background-color: #4B9816;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-warning{
+    box-shadow: 0 0 15px #e6d801;
+    background-color: #e6d801;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-danger{
+    box-shadow: 0 0 15px #cf1322;
+    background-color: #cf1322;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+header{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+header .header-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(rgba(0 ,0 ,0 ,0.9), rgba(0 ,0 ,0 ,0.9)) ,url("../images/Canon.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-content{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.text_content{
+    color: #fff;
+    width: 50%;
+    direction: rtl;
+}
+
+.text_content h1{
+    color: white;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.text_content h1 b{
+    color: #cf1322;
+}
+
+.text_content p{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.text_content .buttons{
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.text_content .buttons a{
+    background-color: #fff;
+    padding: 10px 50px;
+    border-radius: 5px;
+    color: #000;
+}
+
+.text_content .buttons a:hover{
+    background-color: #cf1322;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.text_content .buttons a:last-child{
+    background-color: transparent;
+    outline: 1px solid #fff;
+    color: #fff;
+}
+
+.text_content .buttons a:last-child:hover{
+    background-color: #cf1322;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.character-img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 500px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px){
+    .header-content{
+        flex-direction: column;
+        padding: 100px 20px;
+    }
+
+    .text_content{
+        text-align: center;
+        width: 100%;
+    }
+
+    .text_content h1{
+        font-size: 25px;
+    }
+
+    .text_content p{
+        font-size: 15px;
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+
+    .text_content .buttons{
+        justify-content: space-around;
+    }
+
+    .text_content .buttons a{
+        padding: 10px 30px;
+    }
+
+    .character-img{
+        position: relative;
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .header-content{
+        flex-direction: column;
+        padding: 100px 20px;
+    }
+
+    .text_content{
+        text-align: center;
+        width: 100%;
+    }
+
+    .text_content h1{
+        font-size: 40px;
+    }
+
+    .text_content p{
+        width: 80%;
+        margin: 20px auto;
+        font-size: 25px;
+        line-height: 1.5;
+    }
+
+    .text_content .buttons{
+        justify-content: space-evenly;
+    }
+
+    .text_content .buttons a{
+        padding: 12px 120px;
+    }
+
+    .character-img{
+        position: relative;
+        max-width: 600px;
+    }
+}
+
+header ._text{
+    padding-top: 20vh;
+    width: 100%;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ._text .thead{
+    width: 70%;
+}
+
+header ._text .thead > div{
+    margin-right: 20%;
+}
+
+header ._image .character{
+    width: 50%;
+    position: absolute;
+    bottom: -3px;
+    left: -40px;
+    margin: 0;
+    padding: 0;
+}
+
+header ._image .character img{
+    width: 80%;
+    margin-left: 0;
+}
+
+header ._text .__head{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+header ._text .__head p{
+    font-size: 40px;
+    float: right;
+}
+
+header ._text .__head p:nth-child(2){
+    color: #cf1322;
+    font-weight: bolder;
+}
+
+header ._text .__detail{
+    direction: rtl;
+    width: 50%;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 2;
+    float: right;
+}
+
+header ._text .__links{
+    margin-top: 20px;
+    clear: both;
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+header ._text .__links a{
+    background-color: #fff;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+header ._text .__links a:hover{
+    background-color: #cf1322;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+header ._text .__links a:last-child{
+    background-color: transparent;
+    outline: 1px solid #fff;
+    color: #fff;
+}
+
+header ._text .__links a:last-child:hover{
+    background-color: #cf1322;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 600px){
+    header ._text{
+        padding-top: 12vh;
+    }
+    header ._text .thead{
+        margin-right: 10%;
+        width: 100%;
+        text-align: center;
+    }
+    header ._text .thead > div{
+        width: 90%;
+        margin: auto;
+    }
+    header ._text .thead > div >div{
+        display: block;
+        margin: auto;
+    }
+    header ._image .character{
+        width: 80%;
+        left: 10%;
+    }
+    header ._image .character img{
+        width: 100%;
+    }
+    header ._text .__head{
+        margin-right: 20%;
+    }
+    header ._text .__head p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    header ._text .thead{
+        margin-right: 10%;
+        width: 100%;
+        text-align: center;
+    }
+    header ._text .thead > div{
+        width: 90%;
+        margin: auto;
+    }
+    header ._text .thead > div >div{
+        display: block;
+        margin: auto;
+    }
+    header ._image .character{
+        width: 80%;
+        left: 10%;
+    }
+    header ._image .character img{
+        width: 100%;
+    }
+    header ._text .__head{
+        margin-right: 20%;
+    }
+    header ._text .__head p{
+        font-size: 20px;
+    }
+}
+
+.container{
+    width: 75%;
+    margin: 50px auto;
+}
+
+.container ._head{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.container ._head .__filter{
+    margin-top: 30px;
+}
+
+.container ._head .__filter a{
+    color: #918f8f;
+    font-weight: bolder;
+    padding-right: 30px;
+}
+
+/* do a work for be red link when it in */
+/* 
+.suggested ._head .__filter a:visited{
+    color: #cf1322;
+    /* border-bottom: 2px solid #cf1322; */
+
+
+.carts{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+}
+
+.carts ._cart{
+    position: relative;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 0 2px 2px 0 #0000000d;
+}
+
+.carts ._cart .__image{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.carts ._cart:hover .__image{
+    opacity: 0.3;
+} 
+
+.carts ._cart .__image img{
+    width: 100%;
+    height: 25vh;
+    border-radius: 5% 5% 0 0;
+    object-fit: cover;
+}
+
+.carts ._cart .__detail{
+    width: 90%;
+    margin: -5px auto;
+}
+
+.carts ._cart .__detail >p{
+    padding: 0;
+    margin-bottom: -10px;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 600;
+    direction: rtl;
+}
+
+.carts ._cart .__price{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carts ._cart .__price div:first-child{
+    display: flex;
+    flex-direction: row-reverse;
+} 
+
+.carts ._cart .__price div > p:first-child{
+    font-weight: bolder;
+}
+
+.carts ._cart .__price div > p:nth-child(2){
+    color:rgba(155, 155, 155, 0.716);
+    margin-right: 5px;
+}
+
+.carts ._cart .__price svg:hover rect{
+    fill: #000;
+    transition: 0.3s;
+}
+
+.carts ._cart .__price svg:hover g #filter{
+    filter: none;
+    transition: 0.3s;
+}
+
+.carts ._cart .__dicount{
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.seeall{
+    position: relative;
+    width: 100%;
+}
+
+._seeall{
+    width: 13%;
+    height: 6.5vh;
+    margin: 20px auto;
+    background-color: #cfcfcfc6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+._seeall::before, ._seeall::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 43.4vw;
+    top: 50%;
+    left: 0;
+    background: #cfcfcfc6;
+    z-index: -1;
+}
+
+._seeall::after{
+    left: calc(56%);
+}
+
+._seeall a{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+._seeall:hover{
+    background-color: #cf1322;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 770px){
+    ._seeall{
+        width: 20%;
+    }
+
+    ._seeall::before, ._seeall::after{
+        width: 40vw;
+    }
+
+    ._seeall::after{
+        left: calc(60%);
+    }
+}
+
+@media screen and (max-width: 350px){
+    ._seeall{
+        width: 30%;
+    }
+
+    ._seeall::before, ._seeall::after{
+        width: 35vw;
+    }
+
+    ._seeall::after{
+        left: calc(65%);
+    }
+}
+
+.adslist{
+    position: relative;
+    width: 100%;
+}
+
+.adslist .background{
+    width: 100%;
+    background-image: url(../images/call-of-duty-mobile.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.adslist .background .filter{
+    width: 100%;
+    background-color: #000000e3;
+    padding-bottom: 22px;
+}
+
+.adslist .container{
+    padding-top: 40px;
+}
+
+.adslist ._head{
+    color: #fff;
+}
+
+.bloglist{
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.bloglist ._bloglist{
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px 0;
+}
+
+._bloglist .__bhead h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+._bloglist .bcarts{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+}
+
+.bcarts ._bcart{
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 5%;
+    box-shadow: 0 2px 2px 0 #0000000d;
+}
+
+.bcarts ._bcart .__bimage{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.bcarts ._bcart .__bimage .filter{
+
+}
+
+.bcarts ._bcart .__bimage img{
+    width: 100%;
+    height: 35vh;
+    border-radius: 5% 5% 0 0;
+}
+
+.bcarts ._bcart .__bheads {
+    text-align: right;
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+}
+
+.bcarts ._bcart .__bheads p{
+    margin-top: -10px;
+    font-size: 14px;
+    color: #918f8f;
+}   
+
+.bcarts ._bcart .__bdetail{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.bcarts ._bcart .__bdetail .go{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.bcarts ._bcart:hover .__bheads p{
+    color: #000;
+    transition: 0.3s;
+}
+
+.bcarts ._bcart:hover .__bheads h4{
+    color: #cf1322;
+    transition: 0.3s;
+}
+
+.bcarts ._bcart:hover .__bdetail .go svg path{
+    stroke: #cf1322;
+    transition: 0.3s;
+}
+
+.trust{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18%;
+    height: 32vh;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    border: 1px solid #bebebe8e;
+    box-shadow: 0px 1px 2px #bebebe8e;
+    display: block;
+    z-index: 3;
+}
+
+.trust .container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.trust .head{
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.trust .head div{
+    cursor: pointer;
+    float: right;
+}
+
+.trust .head div:hover line{
+    stroke: #cf1322;
+    transition: 0.3s;
+}
+
+.trust .symbols{
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.trust .symbols div{
+    border: 1px solid #918f8f42;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 2px #c7c6c672;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    
+}
+
+.trust .symbols div img{
+    width: 60px;
+    object-fit: scale-down;
+}
+
+.trust .more{
+    width: 100%;
+    height: 6vh;
+    margin: 20px auto;
+    background-color: #dddbdba5;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4c4c4c;
+    font-size: 15px;
+    font-weight:lighter;
+}
+
+.trust a:hover .more{
+    background-color: #cf1322;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 768px){
+    .trust{
+        width: 40%;
+    }
+}
+
+
+
+
+.add_cart{
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #cf1322;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #cf1322;
+}
+
+.add_cart:hover{
+    background-color: #000;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="register">
+        <div class="seeall">
+            <div class="_seeall">
+                <h1>ثبت نام</h1>
+            </div>
+        </div>
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="ثبت نام">
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
+
+

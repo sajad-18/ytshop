@@ -1,0 +1,261 @@
+body {
+    margin:0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.register{
+    margin-top: 120px;
+}
+
+.seeall{
+    position: relative;
+}
+
+._seeall{
+    width: 12%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6.5vh;
+    border-radius: 7px;
+}
+
+._seeall::before, ._seeall::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 45vw;
+    top: 50%;
+    left: 0;
+    background: #cfcfcf66;
+}
+
+._seeall::after{
+    left: calc(54%);
+}
+
+.container{
+    width: 75%;
+    margin: 20px auto;
+}
+
+.container label{
+    font-size: 20px;
+    padding-bottom: 50px;
+    direction: rtl;
+}
+
+.container p{
+    direction: rtl;
+}
+
+.container input[type='text'], .container input[type='email'], .container input[type='password']{
+    border: 1px solid #918f8f44;
+    border-radius: 7px;
+    box-shadow: 0 0 10px #d6d5d55c;
+    width: 100%;
+    height: 5vh;
+    display: inline;
+    flex-direction: row-reverse;
+    direction: rtl;
+    text-align: right;
+    padding: 5px 10px;
+    margin: 10px 0;
+    font-family: Calibri, Serif, serif;
+}
+
+.container input[type='submit']{
+    width:35%;
+    margin: 50px auto;
+    display: block;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 0 10px #4B9816af;
+    background-color: #4B9816;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Calibri, Serif, serif;
+    padding: 8px;
+}
+
+.alert{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    direction: rtl;
+    border-radius: 7px;
+    padding: 0 50px;
+}
+
+.alert-success{
+    box-shadow: 0 0 10px #4B9816af;
+    background-color: #4B9816;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-warning{
+    box-shadow: 0 0 15px #e6d801;
+    background-color: #e6d801;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-danger{
+    box-shadow: 0 0 15px #cf1322;
+    background-color: #cf1322;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+
+
+
+
+
+
+
+
+
+/* profile page */
+
+.profile{
+    margin-top: 120px;
+}
+
+.profile .username{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.profile .ad-alert{
+    width: 80%;
+    margin: 50px auto;
+    font-size: 30px;
+    text-align: center;
+    direction: rtl;
+    color: #fff;
+    border-radius: 7px;
+    padding: 1px 50px;
+    text-shadow: 2px 1px 10px #4c4c4c;
+}
+
+.profile .danger{
+    box-shadow: 0 0 15px #cf1322;
+    background-color: #cf1322;
+}
+
+.profile .success{
+    box-shadow: 0 0 10px #959595af;
+    background-color: #959595;
+    padding: 0 50px;
+}
+
+.carts{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: max-content;
+}
+
+.carts ._cart{
+    position: relative;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 0 2px 2px 0 #0000000d;
+    max-width: 300px;
+}
+
+.carts ._cart .__image{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.carts ._cart:hover .__image{
+    opacity: 0.3;
+}
+
+.carts ._cart .__image img{
+    width: 100%;
+    height: 25vh;
+    border-radius: 5% 5% 0 0;
+}
+
+.carts ._cart .__detail{
+    width: 90%;
+    margin: -5px auto;
+}
+
+.carts ._cart .__detail >p{
+    padding: 0;
+    margin-bottom: -10px;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.carts ._cart .__price{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carts ._cart .__price div:first-child{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.carts ._cart .__price div > p:first-child{
+    font-weight: bolder;
+}
+
+.carts ._cart .__price div > p:nth-child(2){
+    color:rgba(155, 155, 155, 0.716);
+    margin-right: 5px;
+}
+
+.carts ._cart .__price svg:hover rect{
+    fill: #000;
+    transition: 0.3s;
+}
+
+.carts ._cart .__price svg:hover g #filter{
+    filter: none;
+    transition: 0.3s;
+}
+
+.carts ._cart .__dicount{
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (max-width: 770px){
+    .profile .ad-alert{
+        padding: 0 25px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .profile .ad-alert{
+        font-size: 20px;
+    }
+}
+

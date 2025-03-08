@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'orders/css/order.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="cart">
+        <div class="head">
+            <a href="{% url 'home:home' %}" class="closebtn">&times;</a>
+            <h2>سفارش</h2>
+            <div></div>
+        </div>
+        <div class="detail">
+            <div class="submit-div">
+                <div class="total-price"><p>:مبلغ قابل پرداخت</p><p style="direction: rtl"><b style="color: #cf1322">{{ order.get_total_price }}</b> تومان </p></div>
+                <div class="end">
+                    <a href="" class="submit" id="submit">پرداخت</a>
+                    <a href="{% url 'home:home' %}" class="submit" id="cancel">انصراف</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,532 @@
+body {
+    margin:0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+/* site navbar */
+
+.navbar {
+    overflow: hidden;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding-top: 15px;
+    box-shadow: 1px 1px 10px #00000047;
+    z-index: 1000;
+}
+
+.navbar ._navbar{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar ._resmenu{
+    display: none;
+    font-size: 30px;
+    font-weight: 1000;
+    cursor: pointer;
+    margin: 0;
+}
+
+.navbar ._resmenu:hover{
+    color: #cf1322;
+    transition: 0.3s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+    box-shadow: -20px 0 200px #000000;
+}
+
+.sidenav a {
+    margin: auto 10px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+    direction: rtl;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+    left: -10px;
+  font-size: 36px;
+}
+
+.navbar ._logo{
+}
+
+.navbar ._logo img{
+    width: 70px;
+    height: 50px;
+}
+
+.navbar ._menu{
+}
+
+.navbar ._menu a {
+    float: right;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar ._menu a:hover {
+    color: #cf1322;
+    border-bottom: 1px solid #cf13239b;
+    transition: all 0.3s;
+}
+
+.navbar ._spb{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar ._spb div{
+    width: 35px;
+    height: 35px;
+    border: 2px solid #cf1322;
+    border-radius: 18%;
+    margin-left: 10px;
+}
+
+.navbar ._spb .__serach:hover{
+    background-color: #cf1322;
+    transition: all 0.3s;
+}
+
+.navbar ._spb .__serach:hover svg g circle, .navbar ._spb .__serach:hover svg g path{
+    stroke: #fff;
+}
+
+.navbar ._spb .__serach svg{
+    display: block;
+    margin: auto;
+    padding-top: 7px;
+}
+
+.navbar ._spb .__profile{
+    background-image: linear-gradient(to bottom left, #cf1322, #cf13235a);
+    border:none;
+    width: 39px;
+    height: 39px;
+}
+
+.navbar ._spb .__profile svg{
+    display: block;
+    margin: auto;
+    padding-top: 8px;
+}
+
+.navbar ._spb .__profile:hover svg{
+    padding-top: 6px;
+}
+
+.navbar ._spb .__profile:hover svg g circle, .navbar ._spb .__profile:hover svg g path{
+    stroke: #cf1322;
+}
+
+.navbar ._spb .__profile:hover{
+    background-image: linear-gradient(to top, #fff, #fff);
+    width: 35px;
+    height: 35px;
+    border: 2px solid #cf1322;
+}
+
+.navbar ._spb .__buycart svg{
+    display: block;
+    margin: auto;
+    margin-left: 8px;
+    padding-top: 2px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  .navbar ._resmenu{
+        display: block;
+    }
+    .navbar ._menu{
+        display: none;
+    }
+    .navbar ._spb .__serach{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .navbar ._resmenu{
+        display: block;
+    }
+    .navbar ._menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .navbar ._spb .__serach{
+        display: none;
+    }
+}
+
+
+
+
+
+/* messages style */
+
+.alert{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    direction: rtl;
+    border-radius: 7px;
+    padding: 0 50px;
+    z-index: 2;
+}
+
+.alert-success{
+    box-shadow: 0 0 10px #4B9816af;
+    background-color: #4B9816;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-warning{
+    box-shadow: 0 0 15px #e6d801;
+    background-color: #e6d801;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+.alert-danger{
+    box-shadow: 0 0 15px #cf1322;
+    background-color: #cf1322;
+    color: #fff;
+    text-shadow: 2px 1px 10px #000000;
+}
+
+
+
+/* footer */
+
+footer{
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-bg{
+    background-image:linear-gradient(rgba(0 ,0 ,0 ,0.9), rgba(0 ,0 ,0 ,0.9)) ,url(../images/el-proximo-call-of-duty-dira-adios-a-los-jetpacks-frikigamers.com_.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.about { grid-area: about; }
+.topic { grid-area: topic; }
+.symbol { grid-area: symbol; }
+.c { grid-area: c; }
+.social { grid-area: social; }
+
+.footer-content{
+    display: grid;
+    grid-template-areas:
+        ' symbol symbol symbol symbol topic about '
+        ' social social social social c c';
+    gap: 10px 50px;
+    padding: 50px 20px;
+}
+
+.footer-content h1{
+    text-align: right;
+    color: #fff;
+    font-size: 25px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.footer-content svg{
+    cursor: pointer;
+}
+
+.topic , .about {
+    border-left: 1px solid #918f8f92;
+}
+
+.about{
+    text-align: right;
+}
+
+.about p{
+    color: #918f8f;
+    font-weight: light;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.about b{
+    color: #cf1322;
+}
+
+.topic{
+}
+
+.topic a{
+    color: #918f8f;
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 12px;
+    display: block;
+}
+
+.topic a:hover{
+    color: #cf1322;
+    transition: 0.3s;
+}
+
+.symbol{
+}
+
+.symbol .__symbols{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    float: right;
+}
+
+.symbol .__symbols >div{
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid #cdcccc41;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.symbol .__symbols >div:hover{
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.symbol .__symbols >div:nth-child(2){
+    background-color: #fff;
+}
+
+.symbol .__symbols >div:nth-child(2):hover{
+    background-color: #d6d5d5;
+    transition: 0.3s;
+}
+
+.symbol .__symbols >div img{
+    width: 50px;
+    object-fit: scale-down;
+}
+
+.social{
+    position: relative;
+}
+
+.social svg{
+    position: absolute;
+    right: 0;
+}
+
+.social #_034-instagram:hover #Ellipse_6{
+    fill: #cf1322;
+    transition: 0.3s;
+}
+
+.social #whatsapp:hover #Path_30{
+    fill: #4B9816;
+    transition: 0.3s;
+}
+
+.social #telegram:hover #telegram-2{
+    fill: #2863f8;
+    transition: 0.3s;
+}
+
+.social #telegram:hover #Ellipse_8,
+.social #whatsapp:hover #Ellipse_7,
+.social #_034-instagram:hover #Path_31,
+.social #_034-instagram:hover #Path_32,
+.social #_034-instagram:hover #Ellipse_5{
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.c{
+    position: relative;
+}
+
+.c svg{
+    position: absolute;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .about { grid-area: 1 / 1 / 1 / 7; }
+    .topic { grid-area: 2 / 1 / 2 / 7; }
+    .symbol { grid-area: 3 / 1 / 3 / 7; }
+    .c { grid-area: 5 / 1 / 5 / 7; }
+    .social { grid-area: 4 / 1 / 4 / 7; }
+
+    .footer-content h1,.footer-content p, .footer-content a {
+        text-align: center;
+    }
+
+    .symbol .__symbols{
+        float: none;
+    }
+
+    .topic , .about ,.symbol{
+        border-left: none;
+        border-bottom: 1px solid #918f8f92;
+    }
+
+    .social svg{
+        position: relative;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .c svg{
+        position: relative;
+        display: block;
+        margin: 10px auto;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .about { grid-area: 1 / 4 / 1 / 7; }
+    .topic { grid-area: 1 / 1 / 1 / 4; }
+    .symbol { grid-area: 2 / 4 / 2 / 7; }
+    .c { grid-area: 3 / 1 / 3 / 7; }
+    .social { grid-area: 2 / 1 / 2 / 5; }
+
+    .topic{
+        border: none;
+    }
+
+    .social svg{
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+    }
+
+    .c{
+        border-top: 1px solid #918f8f92;
+    }
+
+    .c svg{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 50%;
+    }
+}
+
+
+
+
+/* chat icon */
+
+.massage{
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    z-index: 3;
+}
+
+.massage svg{
+    z-index: 0;
+    cursor: pointer;
+}
+
+.massage svg:hover circle{
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.massage svg:hover #Group_13 circle{
+    fill: #cf1322;
+    transition: 0.3s;
+}
+
+.massage svg:hover path{
+    fill: #cf1322;
+    transition: 0.3s;
+}
+
+.dropbtn-c {
+    cursor: pointer;
+    width: 40%;
+    height: 7vh;
+    position: absolute;
+    left: 30%;
+    top: 23%;
+    border-radius: 50%;
+}
+
+.dropdown-content-c {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+    bottom: 100px;
+}
+
+.dropdown-content-c a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 0;
+    margin-top: -13%;
+}
+
+.show {display: block;}

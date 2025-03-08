@@ -1,0 +1,75 @@
+{% load static %}
+<footer>
+    <div class="footer-bg">
+        <div class="footer-content">
+            <div class="about">
+                <h1>درباره ما</h1>
+                <p>لورم ایپسوم متنی ساختگی و با تولید سادگی نامفهومی  از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه ها است</p>
+                <p><b>آدرس :</b> تفرش – خیابان امام خمینی – ساختمان تجاری آریا – طبقه 3 – شرکت طراحی منعم دیزاین</p>
+            </div>
+            <div class="topic">
+                <h1>عناوین</h1>
+                <a href="{% url 'ads:ads' %}">ثبت آگهی</a>
+                <a href="{% url 'home:store' %}">فروشگاه</a>
+                <a href="">راهنما</a>
+                <a href="">قوانین و مقررات</a>
+                <a href="">تماس با ما</a>
+            </div>
+            <div class="symbol">
+                <h1>نماد ها</h1>
+                <div class="__symbols">
+                    <div><img src="{% static 'home/images/jokmmpnlmlpk.png' %}" alt=""></div>
+                    <div><img src="{% static 'home/images/3.png' %}" alt=""></div>
+                    <div><img src="{% static 'home/images/2.png' %}" alt=""></div>
+                </div>
+            </div>
+            <div class="social">
+                <svg xmlns="http://www.w3.org/2000/svg" width="140.997" height="38" viewBox="0 0 140.997 38">
+                    <g id="social_icons" data-name="social icons" transform="translate(-187.004 -3904)">
+                      <g id="telegram" transform="translate(187.004 3904.369)">
+                        <circle id="Ellipse_8" data-name="Ellipse 8" cx="17" cy="17" r="17" transform="translate(0.997 1.631)" fill="rgba(255,255,255,0)"/>
+                        <path id="telegram-2" data-name="telegram" d="M18,36A18,18,0,1,0,0,18,17.995,17.995,0,0,0,18,36ZM8.236,17.608l17.353-6.691c.805-.291,1.509.2,1.248,1.414l0,0L23.883,26.25c-.219.987-.805,1.227-1.626.762l-4.5-3.316-2.17,2.091a1.135,1.135,0,0,1-.907.442L15,21.65l8.339-7.534c.363-.319-.081-.5-.559-.181L12.474,20.423,8.032,19.037c-.964-.306-.985-.964.2-1.429Z" fill="#fff"/>
+                      </g>
+                      <g id="whatsapp" transform="translate(239 3904.359)">
+                        <circle id="Ellipse_7" data-name="Ellipse 7" cx="17" cy="17" r="17" transform="translate(1 1.641)" fill="rgba(255,255,255,0)"/>
+                        <g id="Group_1" data-name="Group 1" transform="translate(-5 -5)">
+                          <path id="Path_30" data-name="Path 30" d="M18,0H18A17.989,17.989,0,0,0,3.427,28.55L1.183,35.237,8.1,33.026A18,18,0,1,0,18,0ZM28.478,25.418c-.434,1.226-2.158,2.243-3.532,2.54-.941.2-2.169.36-6.3-1.355-5.29-2.191-8.7-7.567-8.962-7.915s-2.138-2.846-2.138-5.429a5.746,5.746,0,0,1,1.84-4.381,2.615,2.615,0,0,1,1.841-.646c.223,0,.423.011.6.02.529.022.794.054,1.143.889.434,1.046,1.492,3.629,1.618,3.895a1.071,1.071,0,0,1,.076.974,3.111,3.111,0,0,1-.583.826c-.265.306-.517.54-.783.869-.243.286-.518.592-.211,1.12a15.977,15.977,0,0,0,2.92,3.629,13.233,13.233,0,0,0,4.221,2.6,1.138,1.138,0,0,0,1.269-.2A21.779,21.779,0,0,0,22.9,20.995a1,1,0,0,1,1.292-.391c.486.169,3.058,1.44,3.586,1.7s.878.392,1.006.614A4.483,4.483,0,0,1,28.478,25.418Z" transform="translate(5 5)" fill="#fff"/>
+                        </g>
+                      </g>
+                      <g id="_034-instagram" data-name="034-instagram" transform="translate(290 3904)">
+                        <circle id="Ellipse_6" data-name="Ellipse 6" cx="19" cy="19" r="19" transform="translate(0)" fill="#fff"/>
+                        <g id="_034-instagram-2" data-name="034-instagram" transform="translate(9.002 9.002)">
+                          <g id="Group_3" data-name="Group 3">
+                            <g id="Group_2" data-name="Group 2">
+                              <path id="Path_31" data-name="Path 31" d="M13.747,0h-7.5A6.249,6.249,0,0,0,0,6.249v7.5A6.249,6.249,0,0,0,6.249,20h7.5A6.249,6.249,0,0,0,20,13.747v-7.5A6.249,6.249,0,0,0,13.747,0Zm4.374,13.747a4.379,4.379,0,0,1-4.374,4.374h-7.5a4.379,4.379,0,0,1-4.374-4.374v-7.5A4.379,4.379,0,0,1,6.249,1.875h7.5a4.379,4.379,0,0,1,4.374,4.374Z" fill="#000"/>
+                            </g>
+                          </g>
+                          <g id="Group_5" data-name="Group 5" transform="translate(4.999 4.999)">
+                            <g id="Group_4" data-name="Group 4">
+                              <path id="Path_32" data-name="Path 32" d="M133,128a5,5,0,1,0,5,5A5,5,0,0,0,133,128Zm0,8.123A3.124,3.124,0,1,1,136.123,133,3.129,3.129,0,0,1,133,136.123Z" transform="translate(-128 -128)" fill="#000"/>
+                            </g>
+                          </g>
+                          <g id="Group_7" data-name="Group 7" transform="translate(14.705 3.958)">
+                            <g id="Group_6" data-name="Group 6">
+                              <circle id="Ellipse_5" data-name="Ellipse 5" cx="0.666" cy="0.666" r="0.666" fill="#000"/>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                </svg>
+
+            </div>
+            <div class="c">
+                <svg xmlns="http://www.w3.org/2000/svg" width="275.109" height="21.993" viewBox="0 0 275.109 21.993">
+                    <g id="copyrigh" transform="translate(-910 -3888)">
+                      <text id="تمامی_حقوق_مادی_و_معنوی_محفوط_است" data-name="تمامی حقوق مادی و معنوی محفوط است" transform="translate(1159 3905)" fill="#918f8f" font-size="16" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="-250.609" y="0">تمامی حقوق مادی و معنوی محفوط است</tspan></text>
+                      <g id="copyrigh-2" data-name="copyrigh" transform="translate(975.061 3735.833)">
+                        <path id="Path_33" data-name="Path 33" d="M84.583,5.594a8.993,8.993,0,1,1-8.993,8.993,8.993,8.993,0,0,1,8.993-8.993Zm3.133,11.339c-1.177,2.714-6.647,2.342-6.647-1.116V13.376c0-3.457,5.47-3.829,6.647-1.116a.42.42,0,0,1-.238.56l-1.052.394a.418.418,0,0,1-.518-.2c-.491-.931-2.9-.811-2.9.359v2.442c0,1.17,2.4,1.289,2.9.359a.418.418,0,0,1,.518-.2l1.052.394a.42.42,0,0,1,.238.56ZM84.583,7.8a6.789,6.789,0,1,1-6.789,6.789A6.789,6.789,0,0,1,84.583,7.8Z" transform="translate(116.473 150.581)" fill="#cecece" fill-rule="evenodd"/>
+                      </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</footer>

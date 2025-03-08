@@ -1,0 +1,57 @@
+{% load static %}
+<nav class="navbar">
+    <div class="_navbar">
+        <div class="_resmenu" onclick="openNav()">&#9776;</div>
+        <div class="_logo">
+        <a href="{% url 'home:home' %}"><img src="{% static 'home/images/logo+type1.png' %}" alt=""></a>
+    </div>
+        <div class="_menu">
+            <a href="{% url 'home:home' %}">صفحه اصلی</a>
+            <a href="{% url 'ads:ads' %}">ثبت آگهی</a>
+            <a href="{% url 'home:store' %}">فروشگاه</a>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'accounts:user_logout' %}">خروج</a>
+            {% else %}
+                <a href="{% url 'accounts:user_register' %}">ثبت نام</a>
+                <a href="{% url 'accounts:user_login' %}">ورود</a>
+            {% endif %}
+        </div>
+        <div class="_spb">
+        <a href="">
+            <div class="__serach">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20.946" viewBox="0 0 20.505 20.946">
+                    <g id="Search" transform="translate(-1.778 -1.778)">
+                        <circle id="Ellipse_2" data-name="Ellipse 2" cx="8.666" cy="8.666" r="8.666" transform="translate(2.778 2.778)" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        <path id="Path_6" data-name="Path 6" d="M18.018,18.485l3.4,3.389" transform="translate(-0.547 -0.564)" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                </svg>
+            </div>
+        </a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'accounts:user_profile' request.user.id %}">
+            <div class="__profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="21.223" viewBox="0 0 17.166 21.223">
+                    <g id="Profile" transform="translate(-3 -1.5)">
+                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="4.778" cy="4.778" r="4.778" transform="translate(6.801 2.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        <path id="Path_1" data-name="Path 1" d="M4,18.7a2.215,2.215,0,0,1,.22-.97,4.042,4.042,0,0,1,2.819-1.62,16.778,16.778,0,0,1,2.343-.33,25.039,25.039,0,0,1,4.384,0,16.979,16.979,0,0,1,2.343.33c1.071.22,2.361.659,2.819,1.62a2.27,2.27,0,0,1,0,1.95c-.458.961-1.748,1.4-2.819,1.611a15.722,15.722,0,0,1-2.343.339,25.825,25.825,0,0,1-3.57.055,4.06,4.06,0,0,1-.815-.055,15.417,15.417,0,0,1-2.334-.339c-1.08-.211-2.362-.65-2.828-1.611A2.279,2.279,0,0,1,4,18.7Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/>
+                    </g>
+                </svg>
+
+            </div>
+        </a>
+        {% endif %}
+        <a href="{% url 'orders:cart' %}">
+            <div class="__buycart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="28.222" viewBox="0 0 28.047 28.222">
+                    <g id="Buy_cart_icon" data-name="Buy cart icon" transform="translate(-194.953 -36)">
+                        <g id="Buy_cart_icon-2" data-name="Buy cart icon" transform="translate(193.344 41.722)"><path id="Path_7" data-name="Path 7" d="M7.486,21.5h8.348c3.066,0,5.419-1.108,4.751-5.565l-.778-6.041c-.412-2.224-1.831-3.076-3.076-3.076H6.553c-1.263,0-2.6.915-3.076,3.076L2.7,15.935C2.132,19.889,4.42,21.5,7.486,21.5Z" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill-rule="evenodd"/><path id="Path_8" data-name="Path 8" d="M7.349,6.6a4.32,4.32,0,0,1,4.32-4.32h0A4.32,4.32,0,0,1,16.008,6.6h0" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path id="Path_9" data-name="Path 9" d="M8.7,11.1h.046" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path id="Path_10" data-name="Path 10" d="M14.534,11.1h.046" fill="none" stroke="#cf1322" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </g>
+                        <g id="counter"><circle id="Ellipse_3" data-name="Ellipse 3" cx="8" cy="8" r="8" transform="translate(207 37)" fill="#cf1322"/><text id="_2" data-name="2" transform="translate(219 50)" fill="#fff" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="{% if cart|length < 10 %}-7.435{% else %}-11{% endif %}" y="0">{{ cart|length }}</tspan></text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </a>
+    </div>
+    </div>
+</nav>

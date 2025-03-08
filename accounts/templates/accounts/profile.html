@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="profile">
+        <div class="container">
+            <div class="username">
+                <p>{{ user.full_name }}</p>
+            </div>
+            <div class="ad-alert {% if ads %}success{% else %}danger{% endif %}">
+                {% if ads %}
+                    <p>آگهی های شما</p>
+                {% else %}
+                    <p>شما آگهی ای ثبت نکرده اید!</p>
+                {% endif %}
+            </div>
+            <div class="carts">
+                 {% for ad in ads %}
+                        <a href="{{ ad.get_absolute_url }}" class="_cart">
+                            <div class="__image">
+                                <img src="{{ ad.image_lobby.url }}" alt="">
+                            </div>
+                            <div class="__detail">
+                                <p>{{ ad.name }} {{ ad.id }}</p>
+                                <p>تعداد فول گردونه: 5 عدد</p>
+                            </div>
+                            <div class="__price">
+                                <div>
+                                    <p>{{ ad.price }}</p>
+                                    <p>تومان</p>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66" height="66" viewBox="0 0 66 66">
+                                        <g id="buy_button" data-name="buy button" transform="translate(15 11)">
+                                          <g id="filter" transform="matrix(1, 0, 0, 1, -15, -11)" filter="url(#Rectangle_14)">
+                                            <rect id="Rectangle_14-2" data-name="Rectangle 14" width="36" height="36" rx="8" transform="translate(0 11)" fill="#cf1322"/>
+                                          </g>
+                                          <g id="Buy" transform="translate(-8 6.927)">
+                                            <path id="Path_12" data-name="Path 12" d="M7.319,19.82a.661.661,0,1,1-.66.661A.662.662,0,0,1,7.319,19.82Z" transform="translate(-0.53 -2.246)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+                                            <path id="Path_13" data-name="Path 13" d="M18.571,19.82a.661.661,0,1,1-.661.661A.662.662,0,0,1,18.571,19.82Z" transform="translate(-2.055 -2.246)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+                                            <path id="Path_14" data-name="Path 14" d="M2.75,3.25l1.8.311.832,9.918a1.558,1.558,0,0,0,1.553,1.429h9.433a1.56,1.56,0,0,0,1.543-1.336L18.73,7.9a1.159,1.159,0,0,0-1.147-1.325H4.837" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                            <path id="Path_15" data-name="Path 15" d="M14.125,10.8h2.4" transform="translate(-1.542 -1.023)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                          </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="__dicount">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="39" height="26" viewBox="0 0 39 26">
+                                    <path id="Path_43" data-name="Path 43" d="M2,0H39V26H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" fill="#0a0a0a"/>
+                                    <path id="Path_16" data-name="Path 16" d="M167.644,162.86a.335.335,0,0,1,.406.039L172.3,166.6l2.97-4.852a.356.356,0,0,1,.632,0l2.972,4.852,4.25-3.705a.328.328,0,0,1,.4-.039.48.48,0,0,1,.208.417v7.493a.427.427,0,0,1-.378.469H167.815a.427.427,0,0,1-.379-.469v-7.493a.48.48,0,0,1,.208-.417Z" transform="translate(-155 -156)" fill="#ffba01"/>
+                                    <path id="Path_17" data-name="Path 17" d="M167.823,370.72H183.36a.42.42,0,0,1,.378.462v.55a.413.413,0,0,1-.378.455H167.823a.413.413,0,0,1-.379-.455v-.55A.42.42,0,0,1,167.823,370.72Z" transform="translate(-155 -353)" fill="#ffba01"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="31" viewBox="0 0 50 31">
+                                    <g id="off" transform="translate(-181 -1016)">
+                                      <path id="Rectangle_15" data-name="Rectangle 15" d="M0,0H48a2,2,0,0,1,2,2V24a2,2,0,0,1-2,2H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(181 1016)" fill="#cf1322"/>
+                                      <text id="_20" data-name="%20" transform="translate(225 1034)" fill="#fff" font-size="16" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-32.281" y="0">%20</tspan></text>
+                                      <text id="_" transform="translate(193 1028)" fill="#fff" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="-6.641" y="0">_</tspan></text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block link %}{% endblock %}
+    <link rel="shortcut icon" href="{% static 'home/images/logo.png' %}" type="image/x-icon">
+    <title>YT SHOP</title>
+</head>
+<body>
+    {% include 'inc/navbar.html' %}
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home:home' %}">صفحه اصلی</a>
+        <a href="{% url 'ads:ads' %}">ثبت آگهی</a>
+        <a href="{% url 'home:store' %}">فروشگاه</a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'accounts:user_logout' %}">خروج</a>
+        {% else %}
+            <a href="{% url 'accounts:user_register' %}">ثبت نام</a>
+            <a href="{% url 'accounts:user_login' %}">ورود</a>
+        {% endif %}
+    </div>
+    {% include 'inc/messages.html' %}
+    {% block content %} {% endblock %}
+    {% include 'inc/chat.html' %}
+    {% include 'inc/footer.html' %}
+    {% block script %}{% endblock %}
+    <script>
+        function chatFunction() {
+          document.getElementById("chatDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn-c')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content-c");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.body.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

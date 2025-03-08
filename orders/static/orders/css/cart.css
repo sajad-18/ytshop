@@ -1,0 +1,158 @@
+body{
+    background-color: rgba(0,0,0,0.4);
+}
+
+.cart{
+    position: relative;
+    margin: 150px auto;
+    width: 70%;
+    border-radius: 7px;
+    border: 1px solid #dedede;
+    box-shadow: 0 0 30px #918f8f;
+    background-color: #fff;
+}
+
+.cart .head{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 2%;
+}
+
+.cart .head .closebtn{
+    font-size: 36px;
+    color: #959595;
+}
+
+.cart > h2{
+    text-align: center;
+}
+
+.cart .detail{
+    margin: 50px 0;
+}
+
+.cart .detail .product{
+    width: 90%;
+    border-radius: 7px;
+    border: 1px solid #918F8F66;
+    box-shadow: 0 0 15px #918F8F66;
+    padding: 0 20px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .detail .product > div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.cart .detail .product > div > p{
+    direction: rtl;
+    margin-right: 20px;
+}
+
+hr{
+    width: 95%;
+}
+
+.roles{
+    margin: 0 10px;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+}
+
+.end{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.submit{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#submit{
+    background-color: #4B9816;
+    box-shadow:0 0 10px #4B9816;
+}
+
+.cancel{
+    background-color: #cf1322;
+    box-shadow:0 0 10px #cf1322;
+}
+
+.submit-div{
+    position: relative;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.submit-div > div:nth-child(1){
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    order: 2;
+}
+
+@media screen and (max-width: 760px){
+    .cart .detail .product{
+        padding: 0 ;
+        margin: 5px auto;
+    }
+
+    .cart .detail .product > div > p{
+        margin-right: 5px;
+        font-size: 11px;
+    }
+
+    .total-price{
+        grid-column: 1 / 3;
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .end{
+        grid-template-columns: auto;
+        order: 2;
+        margin-bottom: 30px;
+    }
+
+    .submit{
+        position: absolute;
+        width: 90%;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #submit{
+        top: 50%;
+    }
+
+    .cancel{
+        top: 100%;
+    }
+}
+

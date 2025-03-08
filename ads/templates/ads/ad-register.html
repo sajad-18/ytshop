@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ads/css/ad-register.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="ad">
+        <div class="container">
+            <div class="head">
+                <h1>اضافه کردن آگهی جدید</h1>
+                <p>اکیدا توصیه می شود پیش از هر گونه اقدام به ثبت آگهی، متن زیر را به دقت مطالعه نمایید</p>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">
+                    <p>قوانین و راهنمای ثبت آگهی و فروش اکانت</p>
+                    <i class="arrow down"></i>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                  <p>1.  فروشگاه وای تی، به هیچ عنوان اکانت هایی که دارای سیو دیس شده می باشند را آگهی نمیکند. لذا توجه داشته باشید که هزینه ی ثبت آگهی اکانت های
+                    سیو دیس، به هیچ عنوان برگشت داده نخواهد شد</p>
+                  <p>2.  فروشگاه وای تی،به هیچ عنوان اکانت های کرکی را منتشر نخواهد کرد.لذا توجه داشته باشید که هزینه ی ثبت آگهی اکانت های کرکی،به هیچ عنوان برگشت داده نخواهد شد</p>
+                  <p>3.   حق واسطه گری وبسایت فقط از فروشنده دریافت می شود؛ به این صورت که از مبلغ فروش اکانت کسر شده و مابقعی هزینه برای ایشان واریز خواهد شد</p>
+                  <p>4.  حق واسطه گری، برای اکانت های زیر 500 هزار تومان معادل 8 درصد از قیمت اکانت و برای اکانت های 501 تا 1.5 میلیون تومان، معادل 5 درصد از قیمت اکانت و برای اکانت های بالای 2 میلیون تومان معادل 7 درصد قیمت اکانت میباشد</p>
+                  <p>5.  در صورتی که در زمان ثبت آگهی، تیک " مجوز ارسال اطلاعات تماس به خریدار " زده شود. وبسایت در صورت تقاضای خریدار، اطلاعات تماس شما را در اختیار ایشان قرار خواهد داد</p>
+                  <p>6.  در صورتی که در زمان ثبت آگهی، تیک " مجوز ارسال اطلاعات تماس به خریدار " زده شود. وبسایت در صورت تقاضای خریدار، اطلاعات تماس شما را در اختیار ایشان قرار خواهد داد</p>
+                  <p>7.  لازم هست در هنگام ثبت آگهی، تمامی جزئیات را به درستی وارد نمایید چرا که در صورت وجود مغایرت، معامله ی شما کنسل می شود</p>
+                  <p>8.  در صورت انصراف هر کدام از طرفین در حین معامله، اکانت به شما بازگردانده می شود</p>
+                  <p>9.   بلافاصله بعد از فروخته شدن اکانت شما در وبسایت، به شماره ای که در بخش واتس آپ وارد می نمایید از طریق اس ام اس اطلاع رسانی خواهد شد</p>
+                </div>
+            </div>
+            <div class="check">
+                <a href="{% url 'ads:ad_create' %}" class="_button">
+                    <button id="button">ادامه و ثبت آگهی</button>
+                </a>
+                <div class="_check">
+                    <label for="check">قوانین را مطالعه کرده ام</label>
+                    <input type="checkbox" name="check" id="checkbox">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
+
+        const checkbox = document.getElementById('checkbox');
+        const button =document.getElementById('button');
+
+        function toggleDisabled() {
+            button.disabled = !checkbox.checked;
+        }
+
+        checkbox.addEventListener('change', toggleDisabled);
+
+        toggleDisabled();
+    </script>
+{% endblock %}
